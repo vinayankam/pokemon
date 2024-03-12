@@ -1,0 +1,70 @@
+
+
+<div class="">
+  <div class="d-flex">
+    <div (click)="isDetails = true">
+      <input class="input" [class.active]="isDetails" name="tabs" type="radio" id="tab-1"/>
+      <label class="label" [class.active]="isDetails" for="tab-1">Stats/Details</label>
+    </div>
+    <div (click)="isDetails = false">
+      <input class="input"  name="tabs" type="radio" id="tab-2" />
+      <label class="label" [class.active]="!isDetails" for="tab-2">Evolution</label>
+    </div>
+  </div>
+   
+    <div class="panel" *ngIf="isDetails">
+      <div class="row">
+        <div class="col-6 details-1">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/{{id}}.svg"
+          class="image" alt="...">
+        </div>
+        <div class="col-6 details-2" *ngIf="pokemonDetails">
+          <h1 class="pt-2">{{pokemonDetails.name}}</h1>
+          <span *ngFor="let type of pokemonDetails?.types">Type {{type.slot}}: {{type.type.name}} </span>
+          <div>
+            <div>Height: {{pokemonDetails?.height}} </div>
+            <div>Weight: {{pokemonDetails?.weight}} </div>
+            <div>Experience: {{pokemonDetails?.base_experience}}</div>
+          </div>
+
+          <div class="pt-3">
+            <h5>Base Stats:</h5>
+            <div *ngFor="let stat of pokemonDetails?.stats">{{stat.stat.name}} - {{stat.base_stat}}</div>
+          </div>
+
+          <div class="pt-3 pb-3">
+            <h5>Abilities:</h5>
+            <div *ngFor="let ability of pokemonDetails?.abilities">{{ability.ability.name}}</div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+   
+    <div class="panel" *ngIf="!isDetails">
+      <h1 class="pb-2 heading">Evolution</h1>
+      <div class="d-flex justify-content-around align-items-center">
+        <div class="evolutio-1" *ngIf="fromSpecies" [class.current-evolution]="pokemonDetails?.name == fromSpecies.name">
+          <h5 class="text-center pt-2" *ngIf="pokemonDetails?.name == fromSpecies.name">Current Species</h5>
+          <h3 class="text-center pt-1">{{fromSpecies.name}}</h3>
+          <img src="{{fromSpecies.sprites.other.dream_world.front_default}}"
+          class="evol-image" alt="...">
+          
+        </div>
+        <div class="line"></div>
+        <div class="evolutio-2" *ngIf="currentSpecies" [class.current-evolution]="pokemonDetails?.name == currentSpecies.name">
+          <h5 class="text-center pt-2" *ngIf="pokemonDetails?.name == currentSpecies.name">Current Species</h5>
+          <h3 class="text-center pt-1">{{currentSpecies.name}}</h3>
+          <img src="{{currentSpecies.sprites.other.dream_world.front_default}}"
+          class="evol-image" alt="...">
+        </div>
+        <div  class="line"></div>
+        <div class="evolutio-3" *ngIf="toSpecies" [class.current-evolution]="pokemonDetails?.name == toSpecies.name">
+          <h5 class="text-center pt-2" *ngIf="pokemonDetails?.name == toSpecies.name">Current Species</h5>
+          <h3 class="text-center pt-1">{{toSpecies.name}}</h3>
+          <img src="{{toSpecies.sprites.other.dream_world.front_default}}"
+          class="evol-image" alt="...">
+        </div>
+      </div>
+    </div>
+</div>

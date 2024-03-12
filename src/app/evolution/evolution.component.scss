@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+* {
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  body {
+    padding: 60px 10px;
+  }
+}
+h1 {
+  margin: 0;
+  font-family: 'Bree Serif', serif;
+  font-size: 36px;
+}
+p {
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+
+  background: #e5e5e5;
+  box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
+}
+.input {
+  position: absolute;
+  opacity: 0;
+}
+.label {
+  height: 75px;
+  width: 100%;
+  padding: 20px 30px;
+  background: #e5e5e5;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  color: #7f7f7f;
+  transition: background 0.1s, color 0.1s;
+}
+.label:hover {
+  background: #ffffffb8;
+}
+.label:active {
+  background: #ccc;
+}
+.input:focus + .label {
+  z-index: 1;
+}
+.active {
+    background: #fff;
+  color: #000;
+}
+// .input:checked + .label {
+//   background: #fff;
+//   color: #000;
+// }
+@media (min-width: 600px) {
+  .label {
+    width: auto;
+  }
+}
+.panel {
+  padding: 20px 30px 30px;
+  background: #fff;
+}
+@media (min-width: 600px) {
+  .panel {
+    order: 99;
+  }
+}
+.details-1 {
+  background-color: lightgrey;
+  border-radius: 5px ;
+  padding-left: 75px;
+  padding-top: 45px;
+}
+.details-2 {
+  background-color: lightgreen;
+  border-radius: 5px ;
+  // padding-left: 75px;
+  // padding-top: 45px;
+}
+
+.image {
+  height: 85%;
+  width: 85%;
+}
+
+.evolutio-1 {
+  width: 200px;
+  height: 400px;
+  background-color: lightcoral;
+  margin-top: 5%;
+
+}
+.evolutio-2 {
+  width: 200px;
+  height: 400px;
+  background-color: lightgreen;
+  margin-top: 5%;
+
+}
+
+.current-evolution {
+  border: 10px dotted black
+}
+
+.evolutio-3 {
+  width: 200px;
+  height: 400px;
+  background-color: lightseagreen;
+  margin-top: 5%;
+
+}
+
+.heading {
+  margin-left: 42%;
+}
+
+.evol-image {
+  height: 100%;
+  width: 90%;
+  margin-left: 15px;
+}
+
+
+
+.line {
+  width: 60px;
+  height: 1px;
+  background: rgba(0, 0, 0, 12.1);
+  margin: 0px 8px 9px;
+}

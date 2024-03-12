@@ -1,0 +1,22 @@
+<div class="width: 100%;" style="text-align: center;">
+    <h1 class="title">Pokemon</h1>
+</div>
+    <div class="grid-container">
+        <div class="grid-item" *ngFor="let pokemon of pokemons; index as i" [routerLink]="['/pokemon-details',i+1]">
+            <img style="height: 76px;" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/{{i+1}}.svg"
+            class="img-fluid" alt="...">
+            <p>{{pokemon.name}}</p>
+        </div>
+       
+      </div>
+
+      <button class="load-more" (click)="getPokemonList()" [disabled]="isLoading">
+        <span>
+          <span *ngIf="isLoading">Loading...</span>
+          <span *ngIf="!isLoading">Load more</span>
+        </span>
+      </button>
+
+
+
+  
