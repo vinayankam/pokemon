@@ -12,13 +12,13 @@
     </div>
   </div>
    
-    <div class="panel" *ngIf="isDetails">
+    <div class="panel container" *ngIf="isDetails">
       <div class="row">
-        <div class="col-6 details-1">
+        <div class="col-sm-6 details-1">
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/{{id}}.svg"
           class="image" alt="...">
         </div>
-        <div class="col-6 details-2" *ngIf="pokemonDetails">
+        <div class="col-sm-6 details-2" *ngIf="pokemonDetails">
           <h1 class="pt-2">{{pokemonDetails.name}}</h1>
           <span *ngFor="let type of pokemonDetails?.types">Type {{type.slot}}: {{type.type.name}} </span>
           <div>
@@ -43,8 +43,8 @@
    
     <div class="panel" *ngIf="!isDetails">
       <h1 class="pb-2 heading">Evolution</h1>
-      <div class="d-flex justify-content-around align-items-center">
-        <div class="evolutio-1" *ngIf="fromSpecies" [class.current-evolution]="pokemonDetails?.name == fromSpecies.name">
+      <div class="d-flex container row justify-content-around align-items-center">
+        <div class="evolutio-1 col-12 col-md-3" *ngIf="fromSpecies" [class.current-evolution]="pokemonDetails?.name == fromSpecies.name">
           <h5 class="text-center pt-2" *ngIf="pokemonDetails?.name == fromSpecies.name">Current Species</h5>
           <h3 class="text-center pt-1">{{fromSpecies.name}}</h3>
           <img src="{{fromSpecies.sprites.other.dream_world.front_default}}"
@@ -52,14 +52,14 @@
           
         </div>
         <div class="line"></div>
-        <div class="evolutio-2" *ngIf="currentSpecies" [class.current-evolution]="pokemonDetails?.name == currentSpecies.name">
+        <div class="evolutio-2 col-12 col-md-3" *ngIf="currentSpecies" [class.current-evolution]="pokemonDetails?.name == currentSpecies.name">
           <h5 class="text-center pt-2" *ngIf="pokemonDetails?.name == currentSpecies.name">Current Species</h5>
           <h3 class="text-center pt-1">{{currentSpecies.name}}</h3>
           <img src="{{currentSpecies.sprites.other.dream_world.front_default}}"
           class="evol-image" alt="...">
         </div>
         <div  class="line"></div>
-        <div class="evolutio-3" *ngIf="toSpecies" [class.current-evolution]="pokemonDetails?.name == toSpecies.name">
+        <div class="evolutio-3 col-12 col-md-3" *ngIf="toSpecies" [class.current-evolution]="pokemonDetails?.name == toSpecies.name">
           <h5 class="text-center pt-2" *ngIf="pokemonDetails?.name == toSpecies.name">Current Species</h5>
           <h3 class="text-center pt-1">{{toSpecies.name}}</h3>
           <img src="{{toSpecies.sprites.other.dream_world.front_default}}"

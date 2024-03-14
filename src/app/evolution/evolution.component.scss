@@ -97,6 +97,10 @@ p {
   height: 400px;
   background-color: lightcoral;
   margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
 }
 .evolutio-2 {
@@ -104,7 +108,10 @@ p {
   height: 400px;
   background-color: lightgreen;
   margin-top: 5%;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .current-evolution {
@@ -116,7 +123,10 @@ p {
   height: 400px;
   background-color: lightseagreen;
   margin-top: 5%;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .heading {
@@ -124,8 +134,8 @@ p {
 }
 
 .evol-image {
-  height: 100%;
-  width: 90%;
+  height: 400px;
+  width: 170px;
   margin-left: 15px;
 }
 

@@ -3,13 +3,12 @@
     grid-template-columns: repeat(3, 1fr);
     row-gap: 50px;
     column-gap: 100px;
-    padding: 20px 100px;
+    margin: 0px 30px;
+    margin-bottom: 60px;
+    text-align: center;
   }
   .grid-item {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 20px;
-    height: 200px;
-    width: 250px;
     font-size: 30px;
     text-align: center;
   }
@@ -18,30 +17,46 @@
     font-weight: normal;
 }
 
-/* CSS */
+.pokemon-name {
+  font-size: 15px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-top: 1px lightgrey solid;
+}
+
 .load-more {
-  background-color: #FFFFFF;
-  border: 1px solid #222222;
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: #222222;
-  cursor: pointer;
   display: inline-block;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 20px;
-  margin-left: 50%;
   outline: none;
-  padding: 13px 23px;
-  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color,border-color,color,box-shadow,filter;
+  transition-duration: .3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 160px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 700;
   text-align: center;
-  text-decoration: none;
-  touch-action: manipulation;
-  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
-  user-select: none;
-  -webkit-user-select: none;
-  width: auto;
+  padding: 10px 20px;
+  color: #fff;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: grey;
+  height: 48px;
 }
 
 .load-more:focus-visible {
